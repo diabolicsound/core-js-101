@@ -127,8 +127,8 @@ function repeatString(value, count) {
  *   'ABABAB','BA' => 'ABAB'
  */
 function removeFirstOccurrences(str, value) {
-  const final = str.match(value);
-  return str.slice(0, final) + str.slice((final + final.length));
+  const final = str.indexOf(value);
+  return str.slice(0, final) + str.slice((final + value.length));
 }
 
 /**

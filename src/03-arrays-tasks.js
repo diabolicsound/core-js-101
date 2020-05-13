@@ -570,8 +570,17 @@ function swapHeadAndTail(arr) {
   if (arr.length === 1) {
     return arr;
   }
-  const deleted = arr.splice(0, Math.ceil(arr.length / 2));
-  return arr.concat(deleted);
+  if (arr.length % 2 === 0) {
+    const deleted = arr.splice(0, arr.length / 2);
+    return arr.concat(deleted);
+  }
+
+  const copy = arr;
+  const doubleCopy = arr;
+  const partOne = copy.splice(0, copy.length / 2);
+  const partTwo = doubleCopy.splice((doubleCopy.length / 2));
+  const middle = copy[0];
+  return partTwo.concat(middle, partOne);
 }
 
 
