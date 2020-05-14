@@ -303,8 +303,8 @@ function isCreditCardNumber(ccn) {
   let sum = 0;
   const str = String(ccn);
   for (let i = 0; i < str.length; i += 1) {
-    let num = Number(str[i]);
-    if ((str.length - 1) % 2 === 0) {
+    let num = +str[i];
+    if ((str.length - i) % 2 === 0) {
       num *= 2;
       if (num > 9) {
         num -= 9;
