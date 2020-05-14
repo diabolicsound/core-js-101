@@ -24,7 +24,7 @@
  *
  */
 function getComposition(f, g) {
-  return function (a) {
+  return function as(a) {
     return f(g(a));
   };
 }
