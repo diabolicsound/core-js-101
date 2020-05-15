@@ -32,7 +32,7 @@
  * @return {RegExp}
  */
 function getRegexForGuid() {
-  return /[\w-]{9}[\w-]{5}[\w-]{5}[\w-]{5}\w{12}/gmui;
+  return /[\D][a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}[\D]/i;
 }
 
 

@@ -102,7 +102,11 @@ function getFastestPromise(array) {
  *
  */
 function chainPromises(/* array, action */) {
-  throw new Error('Not implemented');
+  /* const arr = [];
+  const prom =  new Promise((resolve, reject) => {
+      resolve(arr.push(resolve));
+      reject(new Error('Wrong parameter is passed! Ask her again.'));
+    }); */
 }
 
 module.exports = {
