@@ -54,7 +54,7 @@ function getRegexForGuid() {
  *z
  */
 function getRegexForPitSpot() {
-  throw new Error('Not implemented');
+  return /^(pi|s|r)/;
 }
 
 

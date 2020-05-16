@@ -107,6 +107,7 @@ function chainPromises(/* array, action */) {
       resolve(arr.push(resolve));
       reject(new Error('Wrong parameter is passed! Ask her again.'));
     }); */
+  throw new Error('Not implemented');
 }
 
 module.exports = {

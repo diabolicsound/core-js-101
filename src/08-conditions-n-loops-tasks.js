@@ -138,8 +138,8 @@ function isTriangle(a, b, c) {
  *
  */
 function doRectanglesOverlap(rect1, rect2) {
-  if (rect1.left < rect2.left + rect2.width
-    && rect1.top > rect2.top - rect2.height && rect1.top - rect1.height <= rect2.top) {
+  if (rect1.left + rect1.width > rect2.left
+    && rect1.top + rect1.height > rect2.top) {
     return true;
   }
   return false;
@@ -356,8 +356,19 @@ function getDigitalRoot(num) {
  *   '{)' = false
  *   '{[(<{[]}>)]}' = true
  */
-function isBracketsBalanced(/* str */) {
-  throw new Error('Not implemented');
+function isBracketsBalanced(str) {
+  let chance = str;
+  const bracks = [['[', ']'], ['(', ')'], ['{', '}'], ['<', '>']];
+  let brackstr = '';
+  for (let i = 0; i < str.length; i += 1) {
+    for (let j = 0; j < bracks.length; j += 1) {
+      brackstr = bracks[j][0] + bracks[j][1];
+      while (chance.includes(brackstr)) {
+        chance = chance.replace(brackstr, '');
+      }
+    }
+  }
+  return chance.length === 0;
 }
 
 
