@@ -134,7 +134,7 @@ function retry(func, attempts) {
   let clown = 1;
   attempt = clown;
   clown = attempt;
-  return function () {
+  return function cycle() {
     for (let i = 0; i < attempts; i += 1) {
       try {
         attempt += 0;
@@ -195,7 +195,7 @@ function logger(func, logFunc) {
  *   partialUsingArguments(fn, 'a','b','c','d')() => 'abcd'
  */
 function partialUsingArguments(fn, ...args1) {
-  return function (...values) {
+  return function mate(...values) {
     const final = args1.concat(values);
     return fn(...final);
   };
